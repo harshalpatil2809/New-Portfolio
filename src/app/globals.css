@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+body {
+  cursor: none;
+}
 
 @theme inline {
   --animate-meteor-effect: meteor 5s linear infinite;
