@@ -1,14 +1,29 @@
-
+"use client";
+import AboutCard from "@/app/components/Cards/AboutCard";
+import { motion } from "framer-motion";
 import { Briefcase, FolderGit2, Award } from "lucide-react";
 
 const About = () => {
+
+  const handleScroll = (id: string) => {
+    const section = document.querySelector(id);
+    if (section) {
+        const top = (section as HTMLElement).offsetTop;
+
+        window.scrollTo({
+            top,
+            behavior: "smooth",
+        });
+
+    }
+};
+
   return (
     <div
       id="about"
       className="min-h-screen bg-linear-to-r from-[#2a2a2a] to-black text-zinc-100 flex items-center justify-center px-6 "
     >
       <div className="max-w-5xl w-full space-y-14">
-
         {/* Heading */}
         <div className="text-center">
           <h2 className="text-5xl font-black tracking-wide">About Me</h2>
@@ -17,73 +32,49 @@ const About = () => {
         {/* Description */}
         <div className="text-center text-gray-300 space-y-4 text-lg leading-relaxed">
           <p>
-            Hello! I&apos;m Harshal Patil, a passionate Software Developer who enjoys building fast, scalable, and visually engaging web applications.
+            Hello! I&apos;m Harshal Patil, a passionate Software Developer who
+            enjoys building fast, scalable, and visually engaging web
+            applications.
           </p>
           <p>
-            I specialize in React, Next.js, Django, Flask, MySQL, PostgreSQL, and Tailwind CSS.
+            I specialize in React, Next.js, Django, Flask, MySQL, PostgreSQL,
+            and Tailwind CSS.
           </p>
           <p>
-            My goal is to grow as a developer and work in a high-impact company where I can continuously learn and build.
+            My goal is to grow as a developer and work in a high-impact company
+            where I can continuously learn and build.
           </p>
         </div>
 
-        {/* Cards Section */}
         <div className="grid md:grid-cols-3 gap-8">
+          <AboutCard
+            title="Internship"
+            subtitle="EXPERIENCE"
+            Icon={Briefcase}
+            href="/pages/internships"
+          />
 
-          {/* Internship */}
-          <div className="group relative bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_35px_rgba(255,255,255,0.15)]">
-
-            {/* white glow background layer */}
-            <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition duration-300 blur-2xl bg-white/10 -z-10"></div>
-
+          <motion.div
+            whileHover={{ scale: 1.08, y: -5 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => handleScroll('#project')}
+            className="group relative cursor-pointer px-6 py-6 rounded-2xl bg-linear-to-r from-zinc-900 via-zinc-800 to-zinc-900 text-white border border-zinc-700 shadow-md hover:shadow-zinc-500/30 backdrop-blur-md transition-all duration-500"
+          >
             <div className="flex items-center gap-3">
-              <Briefcase className="text-white group-hover:drop-shadow-[0_0_12px_rgba(255,255,255,0.8)] transition" />
-              <h3 className="text-xl font-semibold text-white">
-                Internship
-              </h3>
+              <FolderGit2 />
+              <h3 className="text-xl font-semibold">Projects</h3>
             </div>
 
-            <p className="mt-2 text-xs tracking-widest text-white/60">
-              EXPERIENCE
-            </p>
-          </div>
+            <p className="mt-2 text-xs tracking-widest text-zinc-400">Build</p>
+          </motion.div>
 
-          {/* Projects */}
-          <div className="group relative bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_35px_rgba(255,255,255,0.15)]">
-
-            <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition duration-300 blur-2xl bg-white/10 -z-10"></div>
-
-            <div className="flex items-center gap-3">
-              <FolderGit2 className="text-white group-hover:drop-shadow-[0_0_12px_rgba(255,255,255,0.8)] transition" />
-              <h3 className="text-xl font-semibold text-white">
-                Projects
-              </h3>
-            </div>
-
-            <p className="mt-2 text-xs tracking-widest text-white/60">
-              BUILT
-            </p>
-          </div>
-
-          {/* Certificates */}
-          <div className="group relative bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_35px_rgba(255,255,255,0.15)]">
-
-            <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition duration-300 blur-2xl bg-white/10 -z-10"></div>
-
-            <div className="flex items-center gap-3">
-              <Award className="text-white group-hover:drop-shadow-[0_0_12px_rgba(255,255,255,0.8)] transition" />
-              <h3 className="text-xl font-semibold text-white">
-                Certificates
-              </h3>
-            </div>
-
-            <p className="mt-2 text-xs tracking-widest text-white/60">
-              ACHIEVED
-            </p>
-          </div>
-
+          <AboutCard
+            title="Certificates"
+            subtitle="ACHIEVED"
+            Icon={Award}
+            href="/pages/certificate"
+          />
         </div>
-
       </div>
     </div>
   );

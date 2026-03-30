@@ -1,7 +1,7 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
+import ProjectCard from "@/app/components/Cards/ProjectCard";
+import { AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 
 const Project = () => {
@@ -70,82 +70,16 @@ const Project = () => {
 
   return (
     <div
-      id="project"
-      className="min-h-screen bg-linear-to-r from-[#2a2a2a] to-black text-white py-20 flex flex-col items-center justify-center px-5 overflow-hidden"
+      className={"min-h-screen bg-linear-to-r from-[#2a2a2a] to-black text-white py-20 flex flex-col items-center justify-center px-5 overflow-hidden"}
     >
-      <h2 id="project" className="text-5xl font-black mb-16">Projects</h2>
+      <h2 id="project" className={"text-5xl font-black mb-16"}>Projects</h2>
 
-      <div className="relative w-full max-w-4xl">
+      <div className={"relative w-full max-w-4xl"}>
         {/* Card */}
 
-<AnimatePresence mode="wait">
-  <motion.div
-    key={projects[index].id}
-    initial={{ opacity: 0 }}
-    animate={{ opacity: 1 }}
-    exit={{ opacity: 0 }}
-    transition={{ duration: 0.5 }}
-    className="rounded-2xl p-8 bg-linear-to-r from-zinc-900 via-zinc-800 to-zinc-900 border border-zinc-700 shadow-lg hover:shadow-zinc-500/20 backdrop-blur-md transition-all duration-500 overflow-hidden"
-  >
-
-        
-    {/* Image */}
-    <div className="overflow-hidden rounded-xl mb-6">
-      <Image
-        src={projects[index].image}
-        alt={projects[index].name}
-        width={500}
-        height={200}
-        loading="lazy"
-        fetchPriority="low"
-        className="w-full h-56 object-cover transition-transform duration-500 hover:scale-105"
-      />
-    </div>
-
-    {/* Title */}
-    <h3 className="text-2xl font-semibold mb-2">
-      {projects[index].name}
-    </h3>
-
-    {/* Description */}
-    <p className="text-zinc-400 mb-4 text-sm leading-relaxed">
-      {projects[index].description}
-    </p>
-
-    {/* Technologies */}
-    <div className="flex flex-wrap gap-2 mb-6">
-      {projects[index].technologies?.map((tech, i) => (
-        <span
-          key={i}
-          className="px-3 py-1 text-xs rounded-full 
-          bg-white/10 border border-white/10 text-zinc-300"
-        >
-          {tech}
-        </span>
-      ))}
-    </div>
-
-    {/* Buttons */}
-    <div className="flex gap-4">
-      <a
-        href={projects[index].github}
-        target="_blank"
-        className="flex-1 text-center px-4 py-2 rounded-lg border border-zinc-600 hover:border-white hover:bg-white/5 transition-all duration-300"
-      >
-        Code
-      </a>
-
-      <a
-        href={projects[index].live}
-        target="_blank"
-        className="flex-1 text-center px-4 py-2 rounded-lg bg-white text-black hover:bg-zinc-200 transition-all duration-300"
-      >
-        Live
-      </a>
-    </div>
-  </motion.div>
-</AnimatePresence>
-
+        <AnimatePresence mode="wait">
+          <ProjectCard project={projects[index]} />
+        </AnimatePresence>
 
         {/* Arrows */}
         <button

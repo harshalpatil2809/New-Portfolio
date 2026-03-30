@@ -18,18 +18,20 @@ const Navbar = () => {
     };
 
     const handleScroll = (id: string) => {
-        const section = document.querySelector(id);
-        if (section) {
-            const top = (section as HTMLElement).offsetTop ;
+    
 
-            window.scrollTo({
-                top,
-                behavior: "smooth",
-            });
+    const section = document.querySelector(id);
+    if (section) {
+        const top = (section as HTMLElement).offsetTop;
 
-            setOpen(false);
-        }
-    };
+        window.scrollTo({
+            top,
+            behavior: "smooth",
+        });
+
+        setOpen(false);
+    }
+};
 
     const links = [
         { name: "Home", href: "#home", icon: <House size={22} /> },

@@ -1,43 +1,68 @@
-'use client'
+"use client";
 
-import { useState, FormEvent } from "react";
-import { toast } from "react-toastify";
+import { useState } from "react";
+import { toast, ToastContainer } from "react-toastify";
 import { motion } from "framer-motion";
+import "react-toastify/dist/ReactToastify.css";
+import axios from "axios";
+
 
 const Contact = () => {
   const [loading, setLoading] = useState(false);
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [message, setMessage] = useState('')
 
-  const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    setLoading(true);
+  
 
+  const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+  event.preventDefault();
+  setLoading(true);
+
+  try {
     const formData = new FormData(event.currentTarget);
-    formData.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_KEY!);
+    formData.append(
+      "access_key",
+      process.env.NEXT_PUBLIC_WEB3FORMS_KEY!
+    );
 
-    const response = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      body: formData,
-    });
+    const response = await axios.post(
+      "https://api.web3forms.com/submit",
+      formData
+    );
 
-    const data = await response.json();
+    const data = response.data;
 
     if (data.success) {
       toast.success("Message sent successfully 🖤");
       event.currentTarget.reset();
-    } else {
-      toast.error("Something went wrong ⚠️");
-    }
 
+    } else {
+      toast.error(data.message || "Something went wrong ⚠️");
+    }
+  } catch (error) {
+    console.error(error);
+    toast.error("Network error 😢");
+  } finally {
     setLoading(false);
-  };
+  }
+};
 
   return (
     <section
       id="contact"
       className="min-h-screen bg-linear-to-r from-[#2a2a2a] to-black text-zinc-100 flex items-center justify-center px-6 lg:py-30 py-10"
     >
+      <ToastContainer
+        position="top-right"
+        autoClose={2500}
+        theme="dark"
+        hideProgressBar
+        closeOnClick
+        pauseOnHover
+        draggable
+      />
       <div className="w-full max-w-6xl grid md:grid-cols-2 gap-12 items-center">
-
         {/* LEFT SIDE */}
         <motion.div
           initial={{ opacity: 0, x: -80 }}
@@ -46,12 +71,12 @@ const Contact = () => {
           className="space-y-6"
         >
           <h2 className="text-4xl md:text-5xl font-bold leading-tight">
-            Let’s create <br /> something amazing.
+            Let&apos;s create <br /> something amazing.
           </h2>
 
           <p className="text-zinc-400 text-lg">
-            Got an idea, project, or just want to say hi?  
-            I’m always open to meaningful conversations and cool collaborations.
+            Got an idea, project, or just want to say hi? I&apos;m always open
+            to meaningful conversations and cool collaborations.
           </p>
 
           {/* Contact Info */}
@@ -89,7 +114,6 @@ const Contact = () => {
           transition={{ duration: 0.8 }}
         >
           <div className="w-full bg-[#111] border border-zinc-800 rounded-2xl shadow-2xl p-10 backdrop-blur">
-
             {/* Heading */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -97,9 +121,7 @@ const Contact = () => {
               transition={{ delay: 0.2 }}
               className="text-center mb-10"
             >
-              <h2 className="text-4xl font-bold tracking-wide">
-                Get In Touch
-              </h2>
+              <h2 className="text-4xl font-bold tracking-wide">Get In Touch</h2>
               <p className="text-zinc-400 mt-3">
                 Let&apos;s build something cool together.
               </p>
@@ -107,26 +129,47 @@ const Contact = () => {
 
             {/* Form */}
             <form onSubmit={onSubmit} className="space-y-6">
-
-              {["name", "email"].map((field, i) => (
+              
                 <motion.div
-                  key={field}
+                  
                   initial={{ opacity: 0, x: -40 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.3 + i * 0.1 }}
+                  transition={{ delay: 0.3 + 0.1 }}
                 >
                   <label className="block mb-2 text-sm text-zinc-400 capitalize">
-                    {field}
+                    Name
                   </label>
                   <input
-                    type={field === "email" ? "email" : "text"}
-                    name={field}
+                    type="text"
+                    name="Name"
                     required
-                    placeholder={`Your ${field}`}
+                    value={name}
+                    onChange={(e)=>{setName(e.target.value)}}
+                    placeholder={`Your Name`}
                     className="w-full px-4 py-3 bg-black border border-zinc-700 rounded-lg focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition"
                   />
                 </motion.div>
-              ))}
+
+                <motion.div
+                  
+                  initial={{ opacity: 0, x: -40 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.3 + 0.1 }}
+                >
+                  <label className="block mb-2 text-sm text-zinc-400 capitalize">
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    name="Email"
+                    required
+                    value={email}
+                    onChange={(e)=>{setEmail(e.target.value)}}
+                    placeholder={`Your Email`}
+                    className="w-full px-4 py-3 bg-black border border-zinc-700 rounded-lg focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition"
+                  />
+                </motion.div>
+             
 
               {/* Message */}
               <motion.div
@@ -140,6 +183,8 @@ const Contact = () => {
                 <textarea
                   name="message"
                   required
+                  value={message}
+                  onChange={(e)=>{setMessage(e.target.value)}}
                   rows={5}
                   placeholder="Write your message..."
                   className="w-full px-4 py-3 bg-black border border-zinc-700 rounded-lg focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition resize-none"
@@ -169,7 +214,6 @@ const Contact = () => {
             </motion.p>
           </div>
         </motion.div>
-
       </div>
     </section>
   );
