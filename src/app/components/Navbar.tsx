@@ -5,9 +5,11 @@ import { IoMenu, IoClose } from "react-icons/io5";
 import { useState } from "react";
 import { motion, Variants } from "framer-motion";
 
+
+
 const Navbar = () => {
     const [open, setOpen] = useState(false);
-
+    
     const item: Variants = {
         hidden: { opacity: 0, y: 30 },
         show: {
@@ -18,20 +20,16 @@ const Navbar = () => {
     };
 
     const handleScroll = (id: string) => {
-    
-
-    const section = document.querySelector(id);
-    if (section) {
-        const top = (section as HTMLElement).offsetTop;
-
-        window.scrollTo({
-            top,
-            behavior: "smooth",
-        });
-
-        setOpen(false);
-    }
-};
+        const section = document.querySelector(id);
+        if (section) {
+            const top = (section as HTMLElement).offsetTop;
+            window.scrollTo({
+                top,
+                behavior: "smooth",
+            });
+            setOpen(false);
+        }
+    };
 
     const links = [
         { name: "Home", href: "#home", icon: <House size={22} /> },
@@ -65,7 +63,10 @@ const Navbar = () => {
                 <div className="fixed top-5 right-5 flex items-center gap-4 z-50">
 
                     {/* Resume Button */}
-                    <motion.button
+                    <motion.a
+                        href="/Personal_Resume.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         variants={item}
                         initial={false}
                         animate="show"
@@ -75,7 +76,7 @@ const Navbar = () => {
                     >
                         Download Resume
                         <Download size={18} />
-                    </motion.button>
+                    </motion.a>
 
                     {/* Menu Icon */}
                     <div
@@ -118,15 +119,17 @@ const Navbar = () => {
                 </ul>
 
                 {/* Resume Button */}
-                <motion.button
-                    initial={false}
+                <motion.a
+                    href="/Personal_Resume.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     className="mt-10 flex items-center gap-2 px-5 py-3 rounded-xl bg-black/40 backdrop-blur-md border border-white/20 text-white font-medium shadow-lg hover:bg-black/60 transition-all duration-300"
                 >
                     Download Resume
                     <Download size={18} />
-                </motion.button>
+                </motion.a>
             </motion.div>
         </>
     );
