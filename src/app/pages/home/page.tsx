@@ -61,7 +61,8 @@ const Home = () => {
         <motion.h1
           variants={item}
           whileHover={{ scale: 1.05 }}
-          className={`lg:text-[180px] md:text-8xl text-8xl text-center font-black leading-none mb-4 cursor-default ${bebas.className}`}
+          transition={{ type: "spring", stiffness: 200, damping: 15 }}
+          className={`lg:text-[180px] md:text-8xl text-7xl text-center font-black mb-4 cursor-default subpixel-antialiased leading-none tracking-tight text-white/70 ${bebas.className}`}
         >
           Harshal Patil
         </motion.h1>
