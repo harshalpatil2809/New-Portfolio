@@ -169,7 +169,6 @@ const Contact = () => {
                     className="w-full px-4 py-3 bg-black border border-zinc-700 rounded-lg focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition"
                   />
                 </motion.div>
-             
 
               {/* Message */}
               <motion.div
