@@ -28,7 +28,7 @@ const Internship = () => {
       <div className="max-w-5xl mx-auto flex items-center justify-start mb-6">
         <button
           onClick={() => router.push('/')}
-          className="flex items-center gap-2 text-zinc-300 hover:text-white transition"
+          className="flex items-center gap-2 text-zinc-300 hover:text-white transitionc justify-center"
         >
           <span className="text-2xl">←</span>
           Back
@@ -125,7 +125,7 @@ const Internship = () => {
         <div className="flex justify-center mt-16">
           <button
             onClick={() => router.push('/')}
-            className="px-6 py-3 bg-white text-black rounded-lg font-medium hover:bg-zinc-200 transition"
+            className="px-6 py-3 bg-white text-black rounded-lg font-medium hover:bg-zinc-200 transition flex items-center justify-center"
           >
             ← Go Back
           </button>

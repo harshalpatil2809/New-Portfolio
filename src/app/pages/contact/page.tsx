@@ -51,7 +51,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="min-h-screen bg-linear-to-r from-[#2a2a2a] to-black text-zinc-100 flex items-center justify-center px-6 lg:py-30 py-10"
+      className="min-h-screen bg-linear-to-r from-[#2a2a2a] to-black text-zinc-100 flex items-center justify-center px-3 lg:py-30 py-10"
     >
       <ToastContainer
         position="top-right"
@@ -113,7 +113,7 @@ const Contact = () => {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <div className="w-full bg-[#111] border border-zinc-800 rounded-2xl shadow-2xl p-10 backdrop-blur">
+          <div className="w-full bg-[#111] border border-zinc-800 rounded-2xl shadow-2xl py-10 px-3 backdrop-blur">
             {/* Heading */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}

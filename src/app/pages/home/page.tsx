@@ -133,8 +133,6 @@ const Home = () => {
           Explore Projects
         </motion.button>
 
-
-
         <motion.button
           whileHover={{ scale: 1.08, y: -3 }}
           whileTap={{ scale: 0.95 }}
