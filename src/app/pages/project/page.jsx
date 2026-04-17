@@ -16,7 +16,7 @@ const Project = () => {
       github:
         "https://github.com/harshalpatil2809/INTELLEX-2/tree/main/frontend",
       live: "https://intellex-ai-harshal.vercel.app/",
-      technologies: ["Next.js","React JS","TypeScript","Tailwind CSS","Supabase","Google Auth","Django","Groq API","Docker","Postgres"]
+      technologies: ["Next.js","React JS","TypeScript","Tailwind CSS","PostgreSQL(Supabase)","Google Auth","Django","Groq API","Docker"]
     },
     {
       id: 2,
