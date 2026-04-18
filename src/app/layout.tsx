@@ -23,6 +23,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="overflow-x-hidden">
+      <head>
+        <meta name="google-site-verification" content="QF9_x6mHxCcoEMcwyKfnstI8Bl_BxAkgHbZgU5ntRIk" />
+      </head>
       <body className={`min-h-full flex flex-col overflow-x-hidden ${inter.className}`}>
         <Navbar />
         <SmoothScroll>
