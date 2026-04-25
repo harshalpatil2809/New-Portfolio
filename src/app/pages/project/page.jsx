@@ -72,7 +72,7 @@ const Project = () => {
     <div
       className={"min-h-screen bg-linear-to-r from-[#2a2a2a] to-black text-white py-20 flex flex-col items-center justify-center px-5 overflow-hidden"}
     >
-      <h2 id="project" className={"text-5xl font-black mb-10"}>Projects</h2>
+      <h2 id="projects" className={"text-5xl font-black mb-10"}>Projects</h2>
 
       <div className={"relative w-full max-w-4xl"}>
         {/* Card */}
