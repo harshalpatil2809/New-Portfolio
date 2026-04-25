@@ -19,6 +19,7 @@ const Footer = () => {
         <div className="flex gap-6 text-sm text-zinc-400">
           <a href="#home" className="hover:text-white transition">Home</a>
           <a href="#about" className="hover:text-white transition">About</a>
+          <a href="#skills" className="hover:text-white transition">Skills</a>
           <a href="#projects" className="hover:text-white transition">Projects</a>
           <a href="#contact" className="hover:text-white transition">Contact</a>
         </div>
@@ -27,15 +28,24 @@ const Footer = () => {
         <div className="flex gap-4">
           <Link
             href="https://github.com/harshalpatil2809"
+            target="_blank"
             className="border border-zinc-700 px-3 py-2 rounded-lg hover:bg-white hover:text-black transition"
           >
             GitHub
           </Link>
           <Link
             href="https://www.linkedin.com/in/harshal-patil-56a0b2293/"
+            target="_blank"
             className="border border-zinc-700 px-3 py-2 rounded-lg hover:bg-white hover:text-black transition"
           >
             LinkedIn
+          </Link>
+          <Link
+            href="https://x.com/Patil_Harshal_5"
+            target="_blank"
+            className="border border-zinc-700 px-3 py-2 rounded-lg hover:bg-white hover:text-black transition"
+          >
+            Twitter
           </Link>
         </div>
       </div>
