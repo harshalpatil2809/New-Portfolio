@@ -27,7 +27,7 @@ const AboutCard: React.FC<AboutCardProps> = ({
             className="group relative cursor-pointer px-6 py-6 rounded-2xl bg-linear-to-r from-zinc-900 via-zinc-800 to-zinc-900 text-white border border-zinc-700 shadow-md hover:shadow-zinc-500/30 backdrop-blur-md transition-all duration-500"
         >
             <div className="flex items-center gap-3">
-                <Icon />
+                <Icon  size={23}/>
                 <h3 className="text-xl font-semibold">{title}</h3>
             </div>
 

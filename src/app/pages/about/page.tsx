@@ -1,7 +1,7 @@
 "use client";
 import AboutCard from "@/app/components/Cards/AboutCard";
 import { motion } from "framer-motion";
-import { Briefcase, FolderGit2, Award } from "lucide-react";
+import { FiBriefcase, FiFolder, FiAward  } from "react-icons/fi";
 
 const About = () => {
 
@@ -50,7 +50,7 @@ const About = () => {
           <AboutCard
             title="Internship"
             subtitle="EXPERIENCE"
-            Icon={Briefcase}
+            Icon={FiBriefcase}
             href="/pages/internships"
           />
 
@@ -61,7 +61,7 @@ const About = () => {
             className="group relative cursor-pointer px-6 py-6 rounded-2xl bg-linear-to-r from-zinc-900 via-zinc-800 to-zinc-900 text-white border border-zinc-700 shadow-md hover:shadow-zinc-500/30 backdrop-blur-md transition-all duration-500"
           >
             <div className="flex items-center gap-3">
-              <FolderGit2 />
+              <FiFolder size={23}/>
               <h3 className="text-xl font-semibold">Projects</h3>
             </div>
 
@@ -71,7 +71,7 @@ const About = () => {
           <AboutCard
             title="Certificates"
             subtitle="ACHIEVED"
-            Icon={Award}
+            Icon={FiAward}
             href="/pages/certificate"
           />
         </div>
