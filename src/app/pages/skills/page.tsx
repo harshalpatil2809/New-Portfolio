@@ -1,10 +1,10 @@
 'use client'
 import { motion } from "framer-motion";
-import { 
-  FaPython, FaHtml5, FaCss3Alt, FaReact, FaGitAlt 
+import {
+  FaPython, FaHtml5, FaCss3Alt, FaReact, FaGitAlt, FaDocker
 } from "react-icons/fa";
 
-import { 
+import {
   SiJavascript, SiTailwindcss, SiDjango, SiFlask,
   SiNextdotjs, SiMysql, SiPostgresql, SiFigma, SiGithub, SiVercel, SiNetlify, SiRender, SiPostman
 } from "react-icons/si";
@@ -20,10 +20,11 @@ export const TechStack = [
   { name: "Tailwind CSS", icon: SiTailwindcss },
   { name: "Django", icon: SiDjango },
   { name: "Flask", icon: SiFlask },
-  { name: "React", icon: FaReact },
+  { name: "React.js", icon: FaReact },
   { name: "Next.js", icon: SiNextdotjs },
   { name: "MySQL", icon: SiMysql },
   { name: "PostgreSQL", icon: SiPostgresql },
+  { name: "Docker", icon: FaDocker },
   { name: "VS Code", icon: VscVscode },
   { name: "Figma", icon: SiFigma },
   { name: "Git", icon: FaGitAlt },
@@ -46,7 +47,7 @@ const Skills = () => {
       </div>
 
       {/* Grid */}
-      <div className="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
+      <div className="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8">
         {TechStack.map((tech) => {
           const Icon = tech.icon;
 
@@ -61,7 +62,7 @@ const Skills = () => {
               <Icon className="text-4xl mb-4 transition-transform duration-500 group-hover:scale-110" />
 
               {/* Name */}
-              <p className="text-sm tracking-wide text-zinc-300 group-hover:text-white">
+              <p className="text-sm tracking-wide text-zinc-300 group-hover:text-white ">
                 {tech.name}
               </p>
             </motion.div>
