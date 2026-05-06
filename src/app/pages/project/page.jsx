@@ -16,7 +16,18 @@ const Project = () => {
       github:
         "https://github.com/harshalpatil2809/INTELLEX-2/tree/main/frontend",
       live: "https://intellex-ai-harshal.vercel.app/",
-      technologies: ["Next.js","React JS","TypeScript","Tailwind CSS","PostgreSQL(Supabase)","Google Auth","Django","Groq API","Docker"]
+      technologies: [
+        "Next.js",
+        "React JS",
+        "TypeScript",
+        "Tailwind CSS",
+        "PostgreSQL(Supabase)",
+        "Google Auth",
+        "Django",
+        "Django REST Framework",
+        "Groq API",
+        "Docker",
+      ],
     },
     {
       id: 2,
@@ -30,6 +41,7 @@ const Project = () => {
       technologies: [
         "React JS",
         "Django",
+        "Django REST Framework",
         "TailwindCSS",
         "JavaScript",
         "PostgreSQL",
@@ -38,6 +50,30 @@ const Project = () => {
     },
     {
       id: 3,
+      name: "Linklet",
+      description:
+        "A modern real-time chat application built for seamless communication. Linklet enables users to connect instantly with a smooth, responsive interface and efficient backend handling. It supports real-time messaging using WebSockets, secure authentication, and scalable architecture powered by modern full-stack technologies.",
+      image:
+        "https://res.cloudinary.com/dz5yaloug/image/upload/f_auto,q_auto/v1777900788/Linklet_m0x7r3.svg",
+      github: "https://github.com/harshalpatil2809/Linklet-Frontend.git",
+      live: "https://linklet-by-harshal.vercel.app/",
+      technologies: [
+        "Next.js",
+        "React JS",
+        "TypeScript",
+        "Tailwind CSS",
+        "PostgreSQL (Supabase)",
+        "Google Auth",
+        "Django",
+        "Django REST Framework",
+        "Django Channels",
+        "Groq API",
+        "Docker",
+        "WebSocket",
+      ],
+    },
+    {
+      id: 4,
       name: "Weather App",
       description:
         "Weather App using HTML, Tailwind CSS & JavaScript — Displays real-time weather data for any city with a clean, responsive design.",
@@ -70,9 +106,13 @@ const Project = () => {
 
   return (
     <div
-      className={"min-h-screen bg-linear-to-r from-[#2a2a2a] to-black text-white py-20 flex flex-col items-center justify-center px-5 overflow-hidden"}
+      className={
+        "min-h-screen bg-linear-to-r from-[#2a2a2a] to-black text-white py-20 flex flex-col items-center justify-center px-5 overflow-hidden"
+      }
     >
-      <h2 id="projects" className={"text-5xl font-black mb-10"}>Projects</h2>
+      <h2 id="projects" className={"text-5xl font-black mb-10"}>
+        Projects
+      </h2>
 
       <div className={"relative w-full max-w-4xl"}>
         {/* Card */}
