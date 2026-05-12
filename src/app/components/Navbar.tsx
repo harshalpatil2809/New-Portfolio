@@ -64,8 +64,7 @@ const Navbar = () => {
 
                     {/* Resume Button */}
                     <motion.a
-                        href="/Personal_Resume.pdf"
-                        target="_blank"
+                        href="/Harshal_Patil.pdf"                        target="_blank"
                         rel="noopener noreferrer"
                         variants={item}
                         initial={false}
@@ -120,7 +119,7 @@ const Navbar = () => {
 
                 {/* Resume Button */}
                 <motion.a
-                    href="/Personal_Resume.pdf"
+                    href="/Harshal_Patil.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.05 }}
