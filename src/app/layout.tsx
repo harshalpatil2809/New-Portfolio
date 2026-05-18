@@ -7,8 +7,8 @@ import SmoothScroll from "./components/SmoothScroll";
 
 
 export const metadata: Metadata = {
-  title: "Portfolio  |  Harshal",
-  description: "This is Portfolio of Harshal Patil",
+  title: "Harshal Patil - Software Developer",
+  description: "Portfolio of Harshal Patil - Next.js, React, Python and Software Developer.",
 };
 
 const inter = Inter({
