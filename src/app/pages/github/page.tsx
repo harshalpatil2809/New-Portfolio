@@ -3,7 +3,6 @@
 import { GitHubCalendar } from "react-github-calendar";
 import { motion } from "framer-motion";
 import {
-    LuGithub,
     LuArrowUpRight,
     LuUsers,
     LuFolderGit2,
