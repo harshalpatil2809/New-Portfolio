@@ -1,6 +1,6 @@
 "use client";
 
-import ProjectCard from "@/app/components/Cards/ProjectCard";
+import ProjectCard from "@/components/Cards/ProjectCard";
 import { AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 

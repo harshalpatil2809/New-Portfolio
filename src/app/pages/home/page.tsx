@@ -4,7 +4,7 @@ import { LuGithub } from "react-icons/lu";
 import { FiLinkedin } from "react-icons/fi";
 import { FaXTwitter } from "react-icons/fa6";
 import { Bebas_Neue } from "next/font/google";
-import { Meteors } from "@/app/components/ui/meteors";
+import { Meteors } from "@/components/ui/meteors";
 
 const container = {
   hidden: { opacity: 0 },

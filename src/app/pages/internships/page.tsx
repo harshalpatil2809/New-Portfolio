@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import CoustomeArrow from "@/app/components/CoustomeArrow";
+import CoustomeArrow from "@/components/CoustomeArrow";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 

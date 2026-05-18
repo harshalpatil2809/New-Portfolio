@@ -1,5 +1,5 @@
 "use client";
-import AboutCard from "@/app/components/Cards/AboutCard";
+import AboutCard from "@/components/Cards/AboutCard";
 import { motion } from "framer-motion";
 import { FiBriefcase, FiFolder, FiAward  } from "react-icons/fi";
 

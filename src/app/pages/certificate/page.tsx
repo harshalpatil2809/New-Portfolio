@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import CoustomeArrow from '@/app/components/CoustomeArrow'
+import CoustomeArrow from '@/components/CoustomeArrow'
 
 const certificates = [
 
