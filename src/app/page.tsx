@@ -6,6 +6,7 @@ import Project from './pages/project/page'
 import Contact from './pages/contact/page'
 import CoustomeArrow from '@/components/CoustomeArrow'
 import GitHub from './pages/github/page'
+import PortfolioChat from '@/components/Chat/PortfolioChat'
 
 const page = () => {
   return (
@@ -18,6 +19,7 @@ const page = () => {
         <Project />
         <GitHub />
         <Contact />
+        <PortfolioChat />
       </div>
     </>
   )
