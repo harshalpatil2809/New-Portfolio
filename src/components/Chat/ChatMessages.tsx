@@ -1,5 +1,3 @@
-// components/chat/ChatMessages.tsx
-
 import { Message } from './PortfolioChat';
 
 interface Props {
@@ -14,12 +12,12 @@ export default function ChatMessages({
     chatEndRef,
 }: Props) {
     return (
-        <div className="relative z-10 flex-1 overflow-y-auto px-4 py-5 space-y-5 bg-[#050505]">
+        <div onWheel={(e) => e.stopPropagation()} className="relative z-10 flex-1 overflow-y-auto overscroll-contain px-4 py-5 space-y-5 bg-[#050505]">
 
             {messages.length === 0 && (
                 <div className="h-full flex flex-col items-center justify-center text-center">
 
-                    <div className="w-20 h-20 rounded-3xl bg-gradient-to-br from-blue-500/20 to-cyan-400/10 border border-blue-500/20 flex items-center justify-center mb-6 backdrop-blur-xl">
+                    <div className="w-20 h-20 rounded-3xl bg-linear-to-br from-blue-500/20 to-cyan-400/10 border border-blue-500/20 flex items-center justify-center mb-6 backdrop-blur-xl">
                         <span className="text-3xl">🤖</span>
                     </div>
 
@@ -27,27 +25,12 @@ export default function ChatMessages({
                         Ask Anything About Harshal
                     </h2>
 
-                    <p className="text-sm text-zinc-500 mt-3 leading-relaxed max-w-[280px]">
+                    <p className="text-sm text-zinc-500 mt-3 leading-relaxed max-w-70">
                         Projects, backend systems, architecture decisions,
                         AI integrations, Django APIs, deployments and more.
                     </p>
 
-                    <div className="mt-6 flex flex-wrap gap-2 justify-center">
-
-                        {[
-                            'Tell me about Linklet',
-                            'Explain backend architecture',
-                            'What technologies does he use?',
-                            'Show internship experience',
-                        ].map((item) => (
-                            <div
-                                key={item}
-                                className="px-3 py-2 rounded-xl border border-white/10 bg-white/[0.03] text-xs text-zinc-400"
-                            >
-                                {item}
-                            </div>
-                        ))}
-                    </div>
+                
                 </div>
             )}
 
@@ -61,8 +44,8 @@ export default function ChatMessages({
                 >
                     <div
                         className={`max-w-[85%] rounded-3xl px-4 py-3 text-sm leading-relaxed shadow-lg border ${msg.role === 'user'
-                                ? 'bg-gradient-to-r from-blue-600 to-cyan-500 text-white border-blue-500/20 rounded-br-md'
-                                : 'bg-white/[0.03] text-zinc-200 border-white/10 rounded-bl-md backdrop-blur-xl'
+                                ? 'bg-linear-to-r from-gray-600 to-white text-black rounded-br-md'
+                                : 'bg-white/3 text-zinc-200 border-white/10 rounded-bl-md backdrop-blur-xl'
                             }`}
                     >
                         <p className="whitespace-pre-wrap">
@@ -74,7 +57,7 @@ export default function ChatMessages({
 
             {isLoading && (
                 <div className="flex justify-start">
-                    <div className="bg-white/[0.03] border border-white/10 rounded-3xl rounded-bl-md px-4 py-3 backdrop-blur-xl">
+                    <div className="bg-white/3 border border-white/10 rounded-3xl rounded-bl-md px-4 py-3 backdrop-blur-xl">
 
                         <div className="flex items-center gap-2">
                             <span className="h-2 w-2 rounded-full bg-blue-400 animate-bounce" />

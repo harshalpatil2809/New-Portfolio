@@ -1,5 +1,3 @@
-// components/chat/PortfolioChat.tsx
-
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
@@ -7,6 +5,7 @@ import ChatHeader from './ChatHeader';
 import ChatMessages from './ChatMessages';
 import ChatInput from './ChatInput';
 import ChatToggleButton from './ChatToggleButton';
+import '@/app/globals.css'
 
 export interface Message {
   id: string;
@@ -56,7 +55,7 @@ export default function PortfolioChat() {
 
     try {
       const response = await fetch(
-        'http://localhost:8000/api/portfolio/chat/',
+        'http://127.0.0.1:8000/agent/api/chat/',
         {
           method: 'POST',
           headers: {
@@ -67,7 +66,7 @@ export default function PortfolioChat() {
           }),
         }
       );
-
+      console.log(response)
       if (!response.body)
         throw new Error('ReadableStream processing failed');
 
@@ -91,9 +90,9 @@ export default function PortfolioChat() {
           prev.map((msg) =>
             msg.id === aiMessageId
               ? {
-                  ...msg,
-                  text: msg.text + token,
-                }
+                ...msg,
+                text: msg.text + token,
+              }
               : msg
           )
         );
@@ -111,7 +110,7 @@ export default function PortfolioChat() {
       )}
 
       {isOpen && (
-        <div className="w-[410px] max-w-[calc(100vw-2rem)] h-[650px] overflow-hidden rounded-3xl border border-white/10 bg-[#050505] flex flex-col animate-in fade-in slide-in-from-bottom-8 duration-300">
+        <div className="w-102.5 max-w-[calc(100vw-2rem)] h-162.5 overflow-hidden overscroll-none rounded-3xl border border-white/10 bg-[#050505] flex flex-col animate-in fade-in slide-in-from-bottom-8 duration-300">
 
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.12),transparent_55%)] pointer-events-none" />
 
@@ -131,6 +130,19 @@ export default function PortfolioChat() {
           />
         </div>
       )}
+
+      <div
+        className="flex-1 p-0 overflow-y-auto space-y-4 bg-slate-50/60 overscroll-y-contain touch-pan-y"
+        onWheel={(e) => {
+          // Forcefully stop scroll propagation to parent/body context
+          e.stopPropagation();
+        }}
+        onTouchMove={(e) => {
+          // Soft stop for mobile native elastic screen bounces
+          e.stopPropagation();
+        }}
+      ></div>
     </div>
+
   );
 }
