@@ -9,9 +9,6 @@ import axios from "axios";
 
 const Contact = () => {
   const [loading, setLoading] = useState(false);
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
-  const [message, setMessage] = useState('')
 
   
 
@@ -143,9 +140,7 @@ const Contact = () => {
                     type="text"
                     name="Name"
                     required
-                    value={name}
-                    onChange={(e)=>{setName(e.target.value)}}
-                    placeholder={`Your Name`}
+                    placeholder="Your Name"
                     className="w-full px-4 py-3 bg-black border border-zinc-700 rounded-lg focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition"
                   />
                 </motion.div>
@@ -163,9 +158,7 @@ const Contact = () => {
                     type="email"
                     name="Email"
                     required
-                    value={email}
-                    onChange={(e)=>{setEmail(e.target.value)}}
-                    placeholder={`Your Email`}
+                    placeholder="Your Email"
                     className="w-full px-4 py-3 bg-black border border-zinc-700 rounded-lg focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition"
                   />
                 </motion.div>
@@ -182,8 +175,6 @@ const Contact = () => {
                 <textarea
                   name="message"
                   required
-                  value={message}
-                  onChange={(e)=>{setMessage(e.target.value)}}
                   rows={5}
                   placeholder="Write your message..."
                   className="w-full px-4 py-3 bg-black border border-zinc-700 rounded-lg focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition resize-none"

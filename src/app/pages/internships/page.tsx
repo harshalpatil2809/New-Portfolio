@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import CoustomeArrow from "@/components/CoustomeArrow";
+import CustomCursor from "@/components/CustomCursor";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
@@ -23,12 +23,12 @@ const Internship = () => {
   const router = useRouter();
   return (
     <section className="min-h-screen bg-linear-to-r from-[#2a2a2a] to-black text-white px-6 py-20 relative overflow-hidden">
-      <CoustomeArrow />
+      <CustomCursor />
 
       <div className="max-w-5xl mx-auto flex items-center justify-start mb-6">
         <button
           onClick={() => router.push('/')}
-          className="flex items-center gap-2 text-zinc-300 hover:text-white transitionc justify-center"
+          className="flex items-center gap-2 text-zinc-300 hover:text-white transition justify-center"
         >
           <span className="text-2xl">←</span>
           Back

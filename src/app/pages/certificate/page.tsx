@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import CoustomeArrow from '@/components/CoustomeArrow'
+import CustomCursor from '@/components/CustomCursor'
 
 const certificates = [
 
@@ -26,7 +26,7 @@ const Certificate = () => {
     return (
         <section className="min-h-screen bg-linear-to-r from-[#2a2a2a] to-black text-white px-6 py-20">
 
-            <CoustomeArrow />
+            <CustomCursor />
 
             {/* 🔙 TOP BACK BUTTON */}
             <div className="max-w-6xl mx-auto flex items-center justify-start mb-10">

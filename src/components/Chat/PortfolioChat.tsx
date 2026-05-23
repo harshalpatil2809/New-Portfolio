@@ -55,7 +55,7 @@ export default function PortfolioChat() {
 
     try {
       const response = await fetch(
-        'http://127.0.0.1:8000/agent/api/chat/',
+        '/api/chat',
         {
           method: 'POST',
           headers: {
@@ -71,8 +71,6 @@ export default function PortfolioChat() {
         throw new Error('ReadableStream processing failed');
 
       setMessages((prev) => [...prev, initialAiMessage]);
-
-      setIsLoading(false);
 
       const reader = response.body.getReader();
       const decoder = new TextDecoder();
@@ -97,6 +95,8 @@ export default function PortfolioChat() {
           )
         );
       }
+      
+      setIsLoading(false);
     } catch (error) {
       console.error(error);
       setIsLoading(false);
@@ -134,11 +134,9 @@ export default function PortfolioChat() {
       <div
         className="flex-1 p-0 overflow-y-auto space-y-4 bg-slate-50/60 overscroll-y-contain touch-pan-y"
         onWheel={(e) => {
-          // Forcefully stop scroll propagation to parent/body context
           e.stopPropagation();
         }}
         onTouchMove={(e) => {
-          // Soft stop for mobile native elastic screen bounces
           e.stopPropagation();
         }}
       ></div>

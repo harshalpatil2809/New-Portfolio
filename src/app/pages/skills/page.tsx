@@ -56,7 +56,7 @@ const Skills = () => {
               key={tech.name}
               whileHover={{ scale: 1.08, y: -5 }}
               whileTap={{ scale: 0.95 }}
-              className="group px-6 py-6 rounded-xl bg-linear-to-r from-zinc-900 -zinc-800 to-zinc-900 border border-zinc-700 shadow-md hover:shadow-zinc-500/30 backdrop-blur-md flex flex-col items-center justify-center transition-all duration-500 "
+              className="group px-6 py-6 rounded-xl bg-linear-to-r from-zinc-900 via-zinc-800 to-zinc-900 border border-zinc-700 shadow-md hover:shadow-zinc-500/30 backdrop-blur-md flex flex-col items-center justify-center transition-all duration-500 "
             >
               {/* Icon */}
               <Icon className="text-4xl mb-4 transition-transform duration-500 group-hover:scale-110" />
